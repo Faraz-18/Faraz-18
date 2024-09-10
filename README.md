@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Faraz-18
 - 👀 I’m interested in coding
-- 🌱 I’m currently learning python
+- 🌱 I’m currently learning C
 - 💞️ I’m looking to collaborate on github
 - 📫 How to reach me farazertugrul18@gmail.com
 
