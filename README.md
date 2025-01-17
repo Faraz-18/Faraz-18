@@ -14,7 +14,7 @@
 [![](https://visitcount.itsvg.in/api?id=Faraz-18&icon=0&color=0)](https://visitcount.itsvg.in)
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Faraz-18&layout=compact&theme=radical)]
 
----
+- ---
 
 <!---
 Faraz-18/Faraz-18 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
