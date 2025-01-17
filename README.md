@@ -15,6 +15,11 @@
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Faraz-18&layout=compact&theme=radical)
 
 - ---
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/burair-hyder/burair-hyder/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/burair-hyder/burair-hyder/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/burair-hyder/burair-hyder/output/github-snake.svg" />
+</picture>
 
 <!---
 Faraz-18/Faraz-18 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
