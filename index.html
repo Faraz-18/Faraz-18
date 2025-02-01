@@ -7,244 +7,489 @@
     <meta name="google-site-verification" content="YPymvGL4Xe9r0lz6I4PDUNJwu2-aKrDzgNkxtJTw4Oc" />
     <title>Syed Faraz Ahmed - GitHub Profile</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
+        :root {
+            --primary-color: #2a2a72;
+            --secondary-color: #009ffd;
+            --accent-color: #ff6b6b;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --light-text-color: #666;
+            --card-bg-color: #ffffff;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #B0E0E6, #ADD8E6); /* Soft gradient for background */
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Start from the top */
-            min-height: 100%;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 800px;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--secondary-color);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
         }
 
         h1 {
-            color: #003366; /* Deep blue for main heading */
-            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-size: 3rem;
+            margin: 20px 0 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
             margin-bottom: 20px;
         }
 
-        h2 {
-            color: #0073e6; /* Lighter blue for sub-headings */
-            font-size: 1.8rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
+        .social-links {
+            margin-top: 20px;
         }
 
-        p {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #555;
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .card {
+            background-color: var(--card-bg-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .card:hover h2::after {
+            width: 100px;
         }
 
         ul {
             list-style-type: none;
-            padding-left: 20px;
+            padding-left: 0;
         }
 
         li {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
         }
 
-        .emoji {
-            font-size: 1.8em;
+        li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            transition: transform 0.3s ease;
         }
 
-        hr {
-            margin-top: 30px;
-            border: 1px solid #ddd;
+        li:hover::before {
+            transform: scale(1.2);
         }
 
-        a {
-            color: #FF5733; /* Bright accent color for links */
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
         }
 
-        a:hover {
-            color: #d44228; /* Darker shade on hover */
-            text-decoration: underline;
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .highlight:hover::after {
+            transform: scaleX(1);
         }
 
         .btn {
             display: inline-block;
-            background-color: #0073e6; /* Blue button */
+            background-color: var(--accent-color);
             color: white;
-            padding: 12px 24px;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: 500;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-top: 20px;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn:hover {
-            background-color: #005bb5; /* Darker blue on hover */
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(42, 42, 114, 0.3);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .stats-card {
+            background-color: var(--card-bg-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .stats-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .stats-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .stats-card:hover img {
             transform: scale(1.05);
         }
 
-        .highlight {
-            font-weight: bold;
-            color: #4CAF50; /* Green accent for important words */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        .section-header {
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #333;
+        .skill-tag {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .sub-header {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 10px;
+        .skill-tag::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
         }
 
-        /* Responsive Styling */
+        .skill-tag:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        .skill-tag:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px) rotate(3deg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
         @media screen and (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.6rem;
-            }
-
-            p, ul {
-                font-size: 1rem;
-            }
-
-            .emoji {
-                font-size: 1.6em;
-            }
-
-            .container {
-                padding: 20px;
+            .stats-container {
+                grid-template-columns: 1fr;
             }
         }
 
-        @media screen and (max-width: 480px) {
-            h1 {
-                font-size: 1.6rem;
-            }
+        /* Animated background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
 
-            h2 {
-                font-size: 1.4rem;
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
             }
-
-            p, ul {
-                font-size: 0.9rem;
+            50% {
+                background-position: 100% 50%;
             }
-
-            .emoji {
-                font-size: 1.4em;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            .btn {
-                width: 100%;
-                padding: 12px;
+            100% {
+                background-position: 0% 50%;
             }
         }
 
-        .snake-container {
-            margin-top: 40px;
-            text-align: center;
+        /* Particle effect */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
-
-        .snake-container svg {
-            max-width: 90%;
-            height: auto;
-        }
-
-     
-    .snake-container {
-        max-width: 100%;
-        overflow: hidden;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-
     </style>
 </head>
 <body>
-
+<div id="particles-js"></div>
+<div class="animated-bg"></div>
 <div class="container">
-    <h1>Greetings! 👋</h1>
-    <p>Welcome to my digital space on GitHub!</p>
+    <header class="header" data-aos="fade-down">
+        <img src="https://avatars.githubusercontent.com/u/97335084?v=4" alt="Syed Faraz Ahmed" class="profile-img">
+        <h1>Syed Faraz Ahmed</h1>
+        <p class="subtitle">Innovative Computer Science Student | Web Developer | Problem Solver</p>
+        <div class="social-links">
+            <a href="https://github.com/Faraz-18" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/syed-faraz-ahmed-441994211/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/sfaraz_ahmed/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </header>
 
-    <p>My name is <span class="highlight">Syed Faraz Ahmed</span>, a highly motivated and ambitious Computer Science student at <span class="highlight"> FAST NU Karachi </span>. With a deep passion for coding and problem-solving. Currently, I am expanding my skill set and exploring new technologies to stay at the forefront of the tech world.</p>
-
-    <hr>
-
-    <h2 class="emoji">🚀 My Expertise</h2>
-    <ul>
-        <li><strong>Web Development</strong>: : Profcient in  <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, and <span class="highlight">JavaScript</span> for creating responsive and dynamic web applications.</li>
-        <li><strong>Backend Development</strong>: Extensive knowledge of <span class="highlight"> C </span>, <span class="highlight"> C++ </span>, and <span class="highlight"> Python </span>.</li>
-        <li><strong>Database Management</strong>: Skilled in SQL for effective database design, query optimization, and management.</li>
-        <li><strong>Additional Skills</strong>: Video Editing, Graphic Designing, Digital Marketing.</li>
-    </ul>
-
-    <hr>
-
-    <h2 class="emoji">📚 Areas of Focus</h2>
-    <ul>
-        <li><strong>Data Structures & Algorithms</strong>: Delving deeper into problem-solving with a focus on performance optimization and efficiency.</li>
-        <li><strong>Advanced Frameworks</strong>: Gaining proficiency in modern frameworks to streamline development processes and enhance productivity.</li>
-        <li><strong>Continuous Learning</strong>: Exploring new technologies and methodologies, staying curious, and constantly challenging my own understanding of the digital landscape.</li>
-    </ul>
-
-    <hr>
-
-    <h2 class="emoji"> Projects </h2>
-    <ul>
-        <li><strong>Core C Programming Game Development</strong>: Developed an advanced tic tac toe game with amazing user interface.</li>
-        <li><strong>Budget Tracker Web Application</strong>: Developed a user-friendly budget management platform, integrated advanced features to streamline budget calculations and enhance user experience.</li>
-    </ul>
-
-    
-    <hr>
-    <h2 class="emoji">🔝 Top Languages</h2>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Faraz-18&layout=compact&theme=radical" alt="Top Languages">
-    <hr>
-    <h2 class="emoji">📈 GitHub Contributions</h2>
-    <div class="snake-container">
-        <img src="https://raw.githubusercontent.com/Faraz-18/Faraz-18/output/github-snake.svg" alt="GitHub Snake Animation">
+    <div class="card" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p>As a passionate and ambitious Computer Science student at <span class="highlight">FAST NU Karachi</span>, I thrive on turning complex problems into elegant solutions. My journey in tech is driven by an insatiable curiosity and a commitment to continuous learning, always pushing the boundaries of what's possible in the digital realm.</p>
     </div>
-    <hr>
-    
-    <h2 class="emoji">🤝 Let’s Connect!</h2>
-    <p>If you’re working on an exciting project or simply want to exchange ideas, feel free to reach out. I’m always open to collaborating and learning new things. And if you have a good joke, I’m all ears!</p>
-    <p><a href=https://www.instagram.com/sfaraz_ahmed/" class="btn" target="_blank">Let’s Chat!</a></p>
-    <p>Let’s turn concepts into code and ideas into reality—without the bugs!</p>
+
+    <div class="card" data-aos="fade-up">
+        <h2>Expertise</h2>
+        <div class="skills">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Video Editing</span>
+            <span class="skill-tag">Graphic Design</span>
+            <span class="skill-tag">Digital Marketing</span>
+        </div>
+    </div>
+
+    <div class="card" data-aos="fade-up">
+        <h2>Areas of Focus</h2>
+        <ul>
+            <li><strong>Data Structures & Algorithms</strong>: Mastering the art of efficient problem-solving and optimizing performance.</li>
+            <li><strong>Advanced Frameworks</strong>: Exploring cutting-edge technologies to build robust and scalable applications.</li>
+            <li><strong>AI & Machine Learning</strong>: Delving into the world of artificial intelligence to create smarter, more intuitive systems.</li>
+            <li><strong>Cybersecurity</strong>: Developing a keen understanding of digital security to build safer online environments.</li>
+        </ul>
+    </div>
+
+    <div class="card" data-aos="fade-up">
+        <h2>Featured Projects</h2>
+        <ul>
+            <li><strong>Advanced Tic Tac Toe Game</strong>: A C-based game with an intuitive UI, showcasing core programming skills and algorithm design.</li>
+            <li><strong>Budget Tracker Web App</strong>: A comprehensive financial management tool with advanced features for streamlined budget calculations and enhanced user experience.</li>
+            <li><strong>AI-Powered Chess Engine</strong>: An intelligent chess opponent utilizing machine learning algorithms for adaptive gameplay.</li>
+        </ul>
+    </div>
+
+    <div class="card" data-aos="fade-up">
+        <h2>GitHub Insights</h2>
+        <div class="stats-container">
+            <div class="stats-card" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://github-readme-stats.vercel.app/api?username=Faraz-18&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats">
+            </div>
+            <div class="stats-card" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=Faraz-18&theme=tokyonight&hide_border=true" alt="GitHub Streak">
+            </div>
+            <div class="stats-card" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Faraz-18&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages">
+            </div>
+        </div>
+    </div>
+
+    <div class="card" data-aos="fade-up">
+        <h2>Contributions Graph</h2>
+        <div class="stats-card" data-aos="zoom-in">
+            <img src="https://raw.githubusercontent.com/Faraz-18/Faraz-18/output/github-snake.svg" alt="GitHub Snake Animation">
+        </div>
+    </div>
+
+    <div class="card" data-aos="fade-up">
+        <h2>Let's Innovate Together!</h2>
+        <p>I'm always excited to collaborate on groundbreaking projects and exchange innovative ideas. Whether you're looking to revolutionize an industry or simply brainstorm the next big thing in tech, I'm all ears!</p>
+        <p><a href="mailto:your.email@example.com" class="btn">Get In Touch</a></p>
+    </div>
 </div>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+
+    particlesJS("particles-js", {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: "#ffffff" },
+            shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
+            opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+            size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+            line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+            move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+            modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+        },
+        retina_detect: true
+    });
+
+    // Add animation to skill tags
+    const skillTags = document.querySelectorAll('.skill-tag');
+    skillTags.forEach(tag => {
+        tag.addEventListener('mouseover', () => {
+            tag.style.transform = 'rotate(5deg) scale(1.1)';
+        });
+        tag.addEventListener('mouseout', () => {
+            tag.style.transform = 'rotate(0deg) scale(1)';
+        });
+    });
+</script>
 </body>
 </html>
+
