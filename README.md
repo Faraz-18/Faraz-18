@@ -73,6 +73,7 @@
 </p>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=25&pause=1000&color=0969DA&center=true&vCenter=true&width=600&height=100&lines=Thank+you+for+visiting+my+profile!;Let's+connect+and+create+something+amazing!" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=25&pause=1000&color=0969DA&center=true&vCenter=true&width=600&height=100&lines= 
+ Thank+you+for+visiting+my+profile!  ;  Let's+connect+and+create+something+amazing!  " alt="Typing SVG" />
 </div>
 
