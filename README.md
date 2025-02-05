@@ -1,32 +1,44 @@
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=40&pause=1000&color=0969DA&center=true&vCenter=true&width=600&height=100&lines=Hi+%F0%9F%91%8B%2C+I'm+Syed+Faraz+Ahmed;Welcome+to+my+GitHub+Profile!" alt="Typing SVG" />
-</div>
-
-<h3 align="center">Computer Science Student | Web Developer | Problem Solver</h3>
+<h1 align="center">Syed Faraz Ahmed</h1>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=faraz-18&label=Profile%20views&color=0e75b6&style=flat" alt="faraz-18" />
+  <strong>Computer Science Student | Web Developer | Problem Solver</strong>
 </p>
 
-## 🎓 About Me
+<p align="center">
+  <a href="https://linkedin.com/in/syed-faraz-ahmed-441994211">
+    <img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=Linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://github.com/Faraz-18">
+    <img src="https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=GitHub&logoColor=white" alt="GitHub" />
+  </a>
+  <a href="mailto:farazertugrul18@gmail.com">
+    <img src="https://img.shields.io/badge/-Email-D14836?style=flat-square&logo=Gmail&logoColor=white" alt="Email" />
+  </a>
+</p>
 
-- 🏫 Computer Science student at **FAST NU Karachi**
-- 💻 Passionate about Web Development and Software Engineering
-- 🌱 Currently learning **Advanced Frameworks and AI/ML**
+---
+
+## About Me
+
+I'm a dedicated Computer Science student at FAST NU Karachi, passionate about turning complex problems into elegant solutions. My journey in tech is driven by an insatiable curiosity and a commitment to continuous learning.
+
+- 🎓 Studying Computer Science at FAST NU Karachi
+- 💻 Focusing on Web Development and Software Engineering
+- 🌱 Currently exploring Advanced Frameworks and AI/ML
 - 🚀 Always eager to take on new challenges and learn cutting-edge technologies
 
-## 🛠️ Technical Skills
+## Technical Skills
 
 <p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C" />
-  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
+  <img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/-C-00599C?style=flat-square&logo=c&logoColor=white" alt="C" />
+  <img src="https://img.shields.io/badge/-C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++" />
 </p>
 
-## 🏆 Featured Projects
+## Featured Projects
 
 1. **Advanced Tic Tac Toe Game**
    - C-based game with intuitive UI
@@ -40,40 +52,19 @@
    - Intelligent chess opponent using ML algorithms
    - Demonstrates skills in AI and strategic problem-solving
 
-## 📊 GitHub Stats
+## GitHub Statistics
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=faraz-18&show_icons=true&theme=algolia" alt="Faraz's GitHub stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=faraz-18&show_icons=true&theme=github_dark&hide_border=true" alt="Faraz's GitHub Stats" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=faraz-18&theme=algolia" alt="Faraz's GitHub streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=faraz-18&theme=github_dark&hide_border=true" alt="Faraz's GitHub Streak" />
 </p>
 
-## 🐍 Contribution Graph
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Faraz-18/Faraz-18/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Faraz-18/Faraz-18/output/github-contribution-grid-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/Faraz-18/Faraz-18/output/github-contribution-grid-snake.svg" />
-</picture>
-
-## 🤝 Connect with Me
+---
 
 <p align="center">
-  <a href="https://linkedin.com/in/syed-faraz-ahmed-441994211" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="https://instagram.com/sfaraz_ahmed" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
-  </a>
-  <a href="mailto:farazertugrul18@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
+  <i>Let's connect and create something amazing together!</i>
 </p>
-
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=25&pause=1000&color=0969DA&center=true&vCenter=true&width=600&height=100&lines= 
- Thank+you+for+visiting+my+profile!  ;  Let's+connect+and+create+something+amazing!  " alt="Typing SVG" />
-</div>
 
