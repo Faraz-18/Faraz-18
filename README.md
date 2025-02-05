@@ -2,22 +2,10 @@
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=40&pause=1000&color=0969DA&center=true&vCenter=true&width=600&height=100&lines=Hi+%F0%9F%91%8B%2C+I'm+Syed+Faraz+Ahmed;Welcome+to+my+GitHub+Profile!" alt="Typing SVG" />
 </div>
 
-<h3 align="center">Innovative Computer Science Student | Web Developer | Problem Solver</h3>
+<h3 align="center">Computer Science Student | Web Developer | Problem Solver</h3>
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=faraz-18&label=Profile%20views&color=0e75b6&style=flat" alt="faraz-18" />
-  <a href="https://github.com/Faraz-18?tab=followers">
-    <img alt="GitHub followers" src="https://img.shields.io/github/followers/Faraz-18?color=green&logo=github">
-  </a>
-  <a href="https://github.com/Faraz-18/">
-    <img src="https://img.shields.io/github/last-commit/Faraz-18/Faraz-18" alt="last update" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=faraz-18&theme=algolia&no-frame=true&row=1&column=7" alt="faraz-18" />
-  </a>
 </p>
 
 ## 🎓 About Me
@@ -30,9 +18,12 @@
 ## 🛠️ Technical Skills
 
 <p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=c,cpp,python,html,css,js,react,nodejs,express,git,github,vscode&perline=6" />
-  </a>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C" />
+  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
 </p>
 
 ## 🏆 Featured Projects
@@ -59,15 +50,13 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=faraz-18&theme=algolia" alt="Faraz's GitHub streak" />
 </p>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=faraz-18&layout=compact&theme=algolia" alt="Faraz's Top Languages" />
-</p>
-
 ## 🐍 Contribution Graph
 
-<p align="center">
-  <img src="https://github.com/Faraz-18/Faraz-18/blob/output/github-contribution-grid-snake-dark.svg" alt="Snake animation" />
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Faraz-18/Faraz-18/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Faraz-18/Faraz-18/output/github-contribution-grid-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/Faraz-18/Faraz-18/output/github-contribution-grid-snake.svg" />
+</picture>
 
 ## 🤝 Connect with Me
 
