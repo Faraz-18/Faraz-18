@@ -21,26 +21,31 @@
             --primary-color: #2a2a72;
             --secondary-color: #009ffd;
             --accent-color: #ff6b6b;
-            --background-color: #f8f9fa;
-            --text-color: #333;
-            --light-text-color: #666;
-            --card-bg-color: #ffffff;
+            --purple-color: #9d4edd;
+            --background-color: #0f172a;
+            --text-color: #f8fafc;
+            --light-text-color: #cbd5e1;
+            --card-bg-color: rgba(255, 255, 255, 0.1);
+            --card-border-color: rgba(255, 255, 255, 0.2);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--background-color);
+            background: linear-gradient(135deg, #0f172a, #1e3a8a, #312e81);
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
+            position: relative;
+            z-index: 10;
         }
 
         .header {
@@ -49,90 +54,117 @@
             position: relative;
         }
 
-        .profile-img {
+        .profile-img-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-img-ring {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--secondary-color), var(--purple-color), var(--accent-color));
+            animation: spin 10s linear infinite;
+            opacity: 0.7;
+            filter: blur(8px);
+        }
+
+        .profile-img-wrapper {
+            position: relative;
             width: 200px;
             height: 200px;
             border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border: 6px solid var(--secondary-color);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            object-position: center 40%;
+            transform: scale(1.15);
             transition: transform 0.3s ease;
         }
 
         .profile-img:hover {
-            transform: scale(1.05);
+            transform: scale(1.2);
         }
 
         h1 {
-            color: var(--primary-color);
+            color: white;
             font-size: 3rem;
             margin: 20px 0 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 10px rgba(59, 130, 246, 0.3);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 0.8s forwards 0.2s;
         }
 
         .subtitle {
             color: var(--secondary-color);
             font-size: 1.4rem;
             margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 0.8s forwards 0.4s;
         }
 
         .social-links {
             margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards 0.6s;
         }
 
         .social-links a {
-            color: var(--primary-color);
+            color: white;
             font-size: 1.5rem;
             margin: 0 10px;
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .social-links a:hover {
             color: var(--accent-color);
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.1);
         }
 
         .card {
             background-color: var(--card-bg-color);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border-color);
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             padding: 40px;
             margin-bottom: 40px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
-            transform: rotate(45deg);
-            transition: all 0.5s ease;
             opacity: 0;
-        }
-
-        .card:hover::before {
-            opacity: 1;
-            transform: rotate(45deg) translate(50%, 50%);
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+            animation-delay: calc(var(--animation-order) * 0.1s);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
-            color: var(--primary-color);
+            color: white;
             font-size: 2.2rem;
             margin-top: 0;
             margin-bottom: 30px;
             position: relative;
             padding-bottom: 15px;
+            display: inline-block;
         }
 
         h2::after {
@@ -140,15 +172,10 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 60px;
-            height: 4px;
+            width: 100%;
+            height: 3px;
             background-color: var(--accent-color);
             border-radius: 2px;
-            transition: width 0.3s ease;
-        }
-
-        .card:hover h2::after {
-            width: 100px;
         }
 
         ul {
@@ -160,12 +187,11 @@
             margin-bottom: 20px;
             padding-left: 30px;
             position: relative;
+            color: var(--light-text-color);
         }
 
         li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
+            content: '✓';
             color: var(--accent-color);
             position: absolute;
             left: 0;
@@ -174,6 +200,10 @@
 
         li:hover::before {
             transform: scale(1.2);
+        }
+
+        li strong {
+            color: var(--secondary-color);
         }
 
         .highlight {
@@ -201,7 +231,7 @@
 
         .btn {
             display: inline-block;
-            background-color: var(--accent-color);
+            background: linear-gradient(45deg, var(--accent-color), var(--purple-color));
             color: white;
             padding: 12px 30px;
             border-radius: 30px;
@@ -211,6 +241,8 @@
             box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
             position: relative;
             overflow: hidden;
+            display: inline-flex;
+            align-items: center;
         }
 
         .btn::before {
@@ -229,9 +261,18 @@
         }
 
         .btn:hover {
-            background-color: var(--primary-color);
+            background: linear-gradient(45deg, var(--purple-color), var(--secondary-color));
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(42, 42, 114, 0.3);
+        }
+
+        .btn svg {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover svg {
+            transform: translateX(4px);
         }
 
         .stats-container {
@@ -241,37 +282,35 @@
         }
 
         .stats-card {
-            background-color: var(--card-bg-color);
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
             position: relative;
             overflow: hidden;
-        }
-
-        .stats-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
-            transform: rotate(45deg);
-            transition: all 0.5s ease;
             opacity: 0;
+            transform: scale(0.9);
         }
 
-        .stats-card:hover::before {
-            opacity: 1;
-            transform: rotate(45deg) translate(50%, 50%);
+        .stats-card:nth-child(1) {
+            animation: fadeInScale 0.5s forwards 0.1s;
+        }
+
+        .stats-card:nth-child(2) {
+            animation: fadeInScale 0.5s forwards 0.2s;
+        }
+
+        .stats-card:nth-child(3) {
+            animation: fadeInScale 0.5s forwards 0.3s;
         }
 
         .stats-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
         .stats-card img {
@@ -292,7 +331,7 @@
         }
 
         .skill-tag {
-            background-color: var(--secondary-color);
+            background: linear-gradient(45deg, var(--secondary-color), #3a0ca3);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -300,35 +339,38 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-        }
-
-        .skill-tag::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
-            transform: rotate(45deg);
-            transition: all 0.5s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             opacity: 0;
+            transform: translateY(20px);
         }
 
-        .skill-tag:hover::before {
-            opacity: 1;
-            transform: rotate(45deg) translate(50%, 50%);
+        .skill-tag i {
+            margin-right: 6px;
         }
 
         .skill-tag:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-2px) rotate(3deg);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(45deg, #3a0ca3, var(--purple-color));
+            transform: translateY(-5px) rotate(3deg);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
         @media screen and (max-width: 768px) {
             .stats-container {
                 grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .card {
+                padding: 30px 20px;
             }
         }
 
@@ -340,12 +382,70 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.1;
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
+            opacity: 0.1;
         }
 
+        /* Decorative elements */
+        .decorative-circle {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.2;
+            animation: pulse 10s ease-in-out infinite;
+        }
+
+        .circle-1 {
+            top: 10%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background-color: var(--secondary-color);
+        }
+
+        .circle-2 {
+            bottom: 10%;
+            right: 10%;
+            width: 400px;
+            height: 400px;
+            background-color: var(--purple-color);
+            animation-delay: 2s;
+        }
+
+        .circle-3 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background-color: var(--accent-color);
+            opacity: 0.1;
+            animation-delay: 4s;
+        }
+
+        /* Particle effect */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        /* Canvas background */
+        #canvas-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Animations */
         @keyframes gradientBG {
             0% {
                 background-position: 0% 50%;
@@ -358,135 +458,301 @@
             }
         }
 
-        /* Particle effect */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Skill tag animations */
+        .skills .skill-tag:nth-child(1) { animation: fadeInUp 0.5s forwards 0.1s; }
+        .skills .skill-tag:nth-child(2) { animation: fadeInUp 0.5s forwards 0.2s; }
+        .skills .skill-tag:nth-child(3) { animation: fadeInUp 0.5s forwards 0.3s; }
+        .skills .skill-tag:nth-child(4) { animation: fadeInUp 0.5s forwards 0.4s; }
+        .skills .skill-tag:nth-child(5) { animation: fadeInUp 0.5s forwards 0.5s; }
+        .skills .skill-tag:nth-child(6) { animation: fadeInUp 0.5s forwards 0.6s; }
+        .skills .skill-tag:nth-child(7) { animation: fadeInUp 0.5s forwards 0.7s; }
+        .skills .skill-tag:nth-child(8) { animation: fadeInUp 0.5s forwards 0.8s; }
+        .skills .skill-tag:nth-child(9) { animation: fadeInUp 0.5s forwards 0.9s; }
+        .skills .skill-tag:nth-child(10) { animation: fadeInUp 0.5s forwards 1s; }
     </style>
 </head>
 <body>
-<div id="particles-js"></div>
-<div class="animated-bg"></div>
-<div class="container">
-    <header class="header" data-aos="fade-down">
-        <img src="blob:https://web.whatsapp.com/e3f0d9c4-6232-470d-ba10-e8d0d9a7f0dc" alt="Syed Faraz Ahmed" class="profile-img">
-        <h1>Syed Faraz Ahmed</h1>
-        <p class="subtitle">CS'28 At FAST NUCES | Web Developer | Problem Solver</p>
-        <div class="social-links">
-            <a href="https://github.com/Faraz-18" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/syed-faraz-ahmed-441994211/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/sfaraz_ahmed/" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-    </header>
-
-    <div class="card" data-aos="fade-up">
-        <h2>About Me</h2>
-        <p>As a passionate and ambitious Computer Science student at <span class="highlight">FAST NU Karachi</span>, I thrive on turning complex problems into elegant solutions. My journey in tech is driven by an insatiable curiosity and a commitment to continuous learning, always pushing the boundaries of what's possible in the digital realm.</p>
-    </div>
-
-    <div class="card" data-aos="fade-up">
-        <h2>Expertise</h2>
-        <div class="skills">
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">C</span>
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Video Editing</span>
-            <span class="skill-tag">Graphic Design</span>
-            <span class="skill-tag">Digital Marketing</span>
-        </div>
-    </div>
-
-    <div class="card" data-aos="fade-up">
-        <h2>Areas of Focus</h2>
-        <ul>
-            <li><strong>Data Structures & Algorithms</strong>: Mastering the art of efficient problem-solving and optimizing performance.</li>
-            <li><strong>Advanced Frameworks</strong>: Exploring cutting-edge technologies to build robust and scalable applications.</li>
-            <li><strong>AI & Machine Learning</strong>: Delving into the world of artificial intelligence to create smarter, more intuitive systems.</li>
-            <li><strong>Cybersecurity</strong>: Developing a keen understanding of digital security to build safer online environments.</li>
-        </ul>
-    </div>
-
-    <div class="card" data-aos="fade-up">
-        <h2>Featured Projects</h2>
-        <ul>
-            <li><strong>Advanced Tic Tac Toe Game</strong>: A C-based game with an intuitive UI, showcasing core programming skills and algorithm design.</li>
-            <li><strong>Budget Tracker Webpage</strong>: A comprehensive financial management tool with advanced features for streamlined budget calculations and enhanced user experience.</li>
-    </div>
-
-    <div class="card" data-aos="fade-up">
-        <h2>GitHub Insights</h2>
-        <div class="stats-container">
-            <div class="stats-card" data-aos="zoom-in" data-aos-delay="100">
-                <img src="https://github-readme-stats.vercel.app/api?username=Faraz-18&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats">
+    <canvas id="canvas-background"></canvas>
+    <div id="particles-js"></div>
+    <div class="animated-bg"></div>
+    
+    <!-- Decorative circles -->
+    <div class="decorative-circle circle-1"></div>
+    <div class="decorative-circle circle-2"></div>
+    <div class="decorative-circle circle-3"></div>
+    
+    <div class="container">
+        <header class="header" data-aos="fade-down">
+            <div class="profile-img-container">
+                <div class="profile-img-ring"></div>
+                <div class="profile-img-wrapper">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-04-04%20at%207.56.49%20PM-FB9llbq5RyCQskQwP322SdbLwP1H4u.jpeg" alt="Syed Faraz Ahmed" class="profile-img">
+                </div>
             </div>
-            <div class="stats-card" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://github-readme-streak-stats.herokuapp.com/?user=Faraz-18&theme=tokyonight&hide_border=true" alt="GitHub Streak">
+            <h1>Syed Faraz Ahmed</h1>
+            <p class="subtitle">CS'28 At FAST NUCES | Web Developer | Problem Solver</p>
+            <div class="social-links">
+                <a href="https://github.com/Faraz-18" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/syed-faraz-ahmed-441994211/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/sfaraz_ahmed/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
-            <div class="stats-card" data-aos="zoom-in" data-aos-delay="300">
-                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Faraz-18&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages">
+        </header>
+
+        <div class="card" style="--animation-order: 1" data-aos="fade-up">
+            <h2>About Me</h2>
+            <p>As a passionate and ambitious Computer Science student at <span class="highlight">FAST NU Karachi</span>, I thrive on turning complex problems into elegant solutions. My journey in tech is driven by an insatiable curiosity and a commitment to continuous learning, always pushing the boundaries of what's possible in the digital realm.</p>
+        </div>
+
+        <div class="card" style="--animation-order: 2" data-aos="fade-up">
+            <h2>Expertise</h2>
+            <div class="skills">
+                <span class="skill-tag"><i class="fas fa-code"></i> HTML5</span>
+                <span class="skill-tag"><i class="fas fa-paint-brush"></i> CSS3</span>
+                <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="skill-tag"><i class="fas fa-microchip"></i> C</span>
+                <span class="skill-tag"><i class="fas fa-microchip"></i> C++</span>
+                <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                <span class="skill-tag"><i class="fas fa-database"></i> SQL</span>
+                <span class="skill-tag"><i class="fas fa-video"></i> Video Editing</span>
+                <span class="skill-tag"><i class="fas fa-palette"></i> Graphic Design</span>
+                <span class="skill-tag"><i class="fas fa-chart-line"></i> Digital Marketing</span>
             </div>
         </div>
-    </div>
 
-    <div class="card" data-aos="fade-up">
-        <h2>Contributions Graph</h2>
-        <div class="stats-card" data-aos="zoom-in">
-            <img src="https://raw.githubusercontent.com/Faraz-18/Faraz-18/output/github-snake.svg" alt="GitHub Snake Animation">
+        <div class="card" style="--animation-order: 3" data-aos="fade-up">
+            <h2>Areas of Focus</h2>
+            <ul>
+                <li><strong>Data Structures & Algorithms</strong>: Mastering the art of efficient problem-solving and optimizing performance.</li>
+                <li><strong>Advanced Frameworks</strong>: Exploring cutting-edge technologies to build robust and scalable applications.</li>
+                <li><strong>AI & Machine Learning</strong>: Delving into the world of artificial intelligence to create smarter, more intuitive systems.</li>
+                <li><strong>Cybersecurity</strong>: Developing a keen understanding of digital security to build safer online environments.</li>
+            </ul>
+        </div>
+
+        <div class="card" style="--animation-order: 4" data-aos="fade-up">
+            <h2>Featured Projects</h2>
+            <ul>
+                <li><strong>Advanced Tic Tac Toe Game</strong>: A C-based game with an intuitive UI, showcasing core programming skills and algorithm design.</li>
+                <li><strong>Budget Tracker Webpage</strong>: A comprehensive financial management tool with advanced features for streamlined budget calculations and enhanced user experience.</li>
+            </ul>
+        </div>
+
+        <div class="card" style="--animation-order: 5" data-aos="fade-up">
+            <h2>GitHub Insights</h2>
+            <div class="stats-container">
+                <div class="stats-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://github-readme-stats.vercel.app/api?username=Faraz-18&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats">
+                </div>
+                <div class="stats-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Faraz-18&theme=tokyonight&hide_border=true" alt="GitHub Streak">
+                </div>
+                <div class="stats-card" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Faraz-18&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages">
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="--animation-order: 6" data-aos="fade-up">
+            <h2>Contributions Graph</h2>
+            <div class="stats-card" data-aos="zoom-in">
+                <img src="https://raw.githubusercontent.com/Faraz-18/Faraz-18/output/github-snake.svg" alt="GitHub Snake Animation">
+            </div>
+        </div>
+
+        <div class="card" style="--animation-order: 7" data-aos="fade-up">
+            <h2>Let's Innovate Together!</h2>
+            <p>I'm always excited to collaborate on groundbreaking projects and exchange innovative ideas. Whether you're looking to revolutionize an industry or simply brainstorm the next big thing in tech, I'm all ears!</p>
+            <a href="https://www.instagram.com/sfaraz_ahmed/" class="btn">
+                Get In Touch
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </a>
         </div>
     </div>
 
-    <div class="card" data-aos="fade-up">
-        <h2>Let's Innovate Together!</h2>
-        <p>I'm always excited to collaborate on groundbreaking projects and exchange innovative ideas. Whether you're looking to revolutionize an industry or simply brainstorm the next big thing in tech, I'm all ears!</p>
-        <p><a href="https://www.instagram.com/sfaraz_ahmed/" class="btn">Get In Touch</a></p>
-    </div>
-</div>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-    AOS.init({
-        duration: 1000,
-        once: true
-    });
-
-    particlesJS("particles-js", {
-        particles: {
-            number: { value: 80, density: { enable: true, value_area: 800 } },
-            color: { value: "#ffffff" },
-            shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
-            opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
-            size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
-            line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-            move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
-        },
-        interactivity: {
-            detect_on: "canvas",
-            events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
-            modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
-        },
-        retina_detect: true
-    });
-
-    // Add animation to skill tags
-    const skillTags = document.querySelectorAll('.skill-tag');
-    skillTags.forEach(tag => {
-        tag.addEventListener('mouseover', () => {
-            tag.style.transform = 'rotate(5deg) scale(1.1)';
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+            
+            // Initialize particles.js
+            particlesJS("particles-js", {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#ffffff" },
+                    shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
+                    opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+                    size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+                    line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                    modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+                },
+                retina_detect: true
+            });
+            
+            // Canvas background animation
+            const canvas = document.getElementById('canvas-background');
+            const ctx = canvas.getContext('2d');
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            
+            const resizeCanvas = () => {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+            };
+            
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+            
+            const particles = [];
+            
+            for (let i = 0; i < 50; i++) {
+                const radius = Math.random() * 2 + 1;
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius,
+                    color: `rgba(${Math.floor(Math.random() * 100) + 155}, ${Math.floor(Math.random() * 100) + 155}, 255, ${Math.random() * 0.5 + 0.2})`,
+                    speedX: Math.random() * 1 - 0.5,
+                    speedY: Math.random() * 1 - 0.5
+                });
+            }
+            
+            const drawParticles = () => {
+                ctx.clearRect(0, 0, width, height);
+                
+                particles.forEach(particle => {
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = particle.color;
+                    ctx.fill();
+                    
+                    // Update position
+                    particle.x += particle.speedX;
+                    particle.y += particle.speedY;
+                    
+                    // Bounce off walls
+                    if (particle.x < 0 || particle.x > width) particle.speedX *= -1;
+                    if (particle.y < 0 || particle.y > height) particle.speedY *= -1;
+                    
+                    // Draw connections
+                    particles.forEach(otherParticle => {
+                        const dx = particle.x - otherParticle.x;
+                        const dy = particle.y - otherParticle.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(100, 150, 255, ${0.2 - distance/750})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.moveTo(particle.x, particle.y);
+                            ctx.lineTo(otherParticle.x, otherParticle.y);
+                            ctx.stroke();
+                        }
+                    });
+                });
+                
+                requestAnimationFrame(drawParticles);
+            };
+            
+            drawParticles();
+            
+            // Add animation to skill tags
+            const skillTags = document.querySelectorAll('.skill-tag');
+            skillTags.forEach(tag => {
+                tag.addEventListener('mouseover', () => {
+                    tag.style.transform = 'rotate(5deg) scale(1.1)';
+                });
+                tag.addEventListener('mouseout', () => {
+                    tag.style.transform = 'rotate(0deg) scale(1)';
+                });
+            });
+            
+            // Set animation order for cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.setProperty('--animation-order', index + 1);
+                card.style.animationDelay = `${0.1 * (index + 1)}s`;
+            });
         });
-        tag.addEventListener('mouseout', () => {
-            tag.style.transform = 'rotate(0deg) scale(1)';
-        });
-    });
-</script>
+    </script>
 </body>
 </html>
